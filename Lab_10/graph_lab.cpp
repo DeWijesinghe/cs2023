@@ -14,13 +14,13 @@ struct Node{
 
 struct Graph{
     //graph will have an array of type "node" with length specified by n
-    int n=8;
+    int n=9;
     Node * nodes = new Node[n];
 
     void intializenodes(){
         //iterate through the nodes and assign labels
         for(int i=0;i<n;i++){
-            nodes[i].label=i+1;
+            nodes[i].label=i;
         }
     }
 
@@ -43,7 +43,7 @@ struct Graph{
     void print(){
         //lets iterate through each node and print its neighbours
         for(int i=0;i<n;i++){
-           cout <<"Node " << i+1 << " neighbours are: " ;
+           cout << i << " --> " ;
            for (auto element: *nodes[i].neighbours){
                 cout << element << " ";
            }
@@ -61,6 +61,7 @@ int main() {
     g->addedge(1,2);
     g->addedge(1,4);
     g->addedge(1,3);
+    g->addedge(1,5);
     g->addedge(2,3);
     g->addedge(2,6);
     g->addedge(4,6);
